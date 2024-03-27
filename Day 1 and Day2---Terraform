@@ -1,0 +1,1803 @@
+
+
+CMD OUTPUT
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+PS C:\training\day1> terraform.exe apply -auto-approve
+tls_private_key.keypair: Refreshing state... [id=d9fbf98c9c6b379e9137eb0350e8884c25e37b9f]
+local_file.tls_private_key: Refreshing state... [id=b966a6673c53e9a6f970c9551b17c03d0787206e]
+aws_key_pair.keypair: Refreshing state... [id=itashi-key]
+data.aws_ami.ubuntu: Reading...
+aws_security_group.ubuntu: Refreshing state... [id=sg-063512929027095be]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-068cf3d51efeb20d6]
+aws_instance.ubuntu: Refreshing state... [id=i-05cf77357c710ee05]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # null_resource.install_packages will be created
+  + resource "null_resource" "install_packages" {
+      + id = (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+null_resource.install_packages: Creating...
+null_resource.install_packages: Provisioning with 'remote-exec'...
+null_resource.install_packages (remote-exec): Connecting to remote host via SSH...
+null_resource.install_packages (remote-exec):   Host: 3.137.187.141
+null_resource.install_packages (remote-exec):   User: ubuntu
+null_resource.install_packages (remote-exec):   Password: false
+null_resource.install_packages (remote-exec):   Private key: true
+null_resource.install_packages (remote-exec):   Certificate: false
+null_resource.install_packages (remote-exec):   SSH Agent: false
+null_resource.install_packages (remote-exec):   Checking Host Key: false
+null_resource.install_packages (remote-exec):   Target Platform: unix
+null_resource.install_packages (remote-exec): Connected!
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+null_resource.install_packages (remote-exec): 0% [Connecting to security.ubuntu.com (
+null_resource.install_packages (remote-exec): Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+null_resource.install_packages (remote-exec): Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
+null_resource.install_packages (remote-exec): 0% [Waiting for headers]
+null_resource.install_packages (remote-exec): Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+null_resource.install_packages (remote-exec): 0% [4 InRelease 14.2 kB/110 kB 13%]
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+null_resource.install_packages (remote-exec): 0% [5 Packages 50.5 kB/14.1 MB 0%]
+null_resource.install_packages (remote-exec): 0% [5 Packages 12.0 MB/14.1 MB 85%]
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [Waiting for
+null_resource.install_packages (remote-exec): Get:6 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [6 Translatio
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [6 Translatio
+null_resource.install_packages (remote-exec): Get:7 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [7 Commands-a
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:8 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [8 Packages 0
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:9 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [9 Translatio
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:10 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [10 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:11 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1505 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [11 Packages
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:12 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1059 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [12 Packages
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:13 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [240 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [13 Translati
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:14 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [22.1 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [14 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:15 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [42.1 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [15 Packages
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:16 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [10.1 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [16 Translati
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:17 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [472 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [17 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:18 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [67.1 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [18 Packages
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:19 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.0 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [19 Translati
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:20 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [20 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:21 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [21 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:22 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.4 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [22 Packages
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:23 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.2 kB]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [23 Translati
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:24 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [644 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [24 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:25 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B] [25 Commands-
+null_resource.install_packages (remote-exec): 0% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): 86% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:26 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1290 kB]
+null_resource.install_packages (remote-exec): 86% [5 Packages store 0 B] [26 Packages
+null_resource.install_packages (remote-exec): 90% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:27 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [851 kB]
+null_resource.install_packages (remote-exec): 90% [5 Packages store 0 B] [27 Packages
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:28 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [162 kB]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B] [28 Translat
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:29 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [16.8 kB]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B] [29 Commands
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:30 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37.1 kB]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B] [30 Packages
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:31 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7476 B]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B] [31 Translat
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): Get:32 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [260 B]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B] [32 Commands
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): 93% [5 Packages store 0 B]
+null_resource.install_packages (remote-exec): 94% [Working]
+null_resource.install_packages (remote-exec): 94% [6 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 94% [6 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 94% [Working]
+null_resource.install_packages (remote-exec): 94% [7 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 94% [Working]
+null_resource.install_packages (remote-exec): 94% [8 Packages store 0 B]
+null_resource.install_packages (remote-exec): 94% [Working]
+null_resource.install_packages (remote-exec): 94% [9 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): 95% [10 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): 95% [11 Packages store 0 B]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): 95% [12 Packages store 0 B]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): 95% [13 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): 95% [14 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 96% [Working]
+null_resource.install_packages (remote-exec): 96% [15 Packages store 0 B]
+null_resource.install_packages (remote-exec): 96% [Working]
+null_resource.install_packages (remote-exec): 96% [16 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 96% [Working]
+null_resource.install_packages (remote-exec): 96% [17 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 96% [Working]
+null_resource.install_packages (remote-exec): 96% [18 Packages store 0 B]
+null_resource.install_packages (remote-exec): 97% [Working]
+null_resource.install_packages (remote-exec): 97% [19 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 97% [Working]
+null_resource.install_packages (remote-exec): 97% [20 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 97% [Working]
+null_resource.install_packages (remote-exec): 97% [21 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 97% [Working]
+null_resource.install_packages (remote-exec): 97% [22 Packages store 0 B]
+null_resource.install_packages (remote-exec): 98% [Working]
+null_resource.install_packages (remote-exec): 98% [23 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 98% [Working]
+null_resource.install_packages (remote-exec): 98% [24 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 98% [Working]
+null_resource.install_packages (remote-exec): 98% [25 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 98% [Working]
+null_resource.install_packages (remote-exec): 98% [26 Packages store 0 B]
+null_resource.install_packages (remote-exec): 99% [Working]
+null_resource.install_packages (remote-exec): 99% [27 Packages store 0 B]
+null_resource.install_packages (remote-exec): 99% [Working]
+null_resource.install_packages (remote-exec): 99% [28 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 99% [Working]
+null_resource.install_packages (remote-exec): 99% [29 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 99% [Working]
+null_resource.install_packages (remote-exec): 99% [30 Packages store 0 B]
+null_resource.install_packages (remote-exec): 100% [Working]
+null_resource.install_packages (remote-exec): 100% [31 Translation-en store 0 B]
+null_resource.install_packages (remote-exec): 100% [Working]
+null_resource.install_packages (remote-exec): 100% [32 Commands-amd64 store 0 B]
+null_resource.install_packages (remote-exec): 100% [Working]
+null_resource.install_packages (remote-exec): Fetched 26.1 MB in 5s (5377 kB/s)
+null_resource.install_packages: Still creating... [10s elapsed]
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 3%
+null_resource.install_packages (remote-exec): Reading package lists... 3%
+null_resource.install_packages (remote-exec): Reading package lists... 5%
+null_resource.install_packages (remote-exec): Reading package lists... 5%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 42%
+null_resource.install_packages (remote-exec): Reading package lists... 42%
+null_resource.install_packages (remote-exec): Reading package lists... 47%
+null_resource.install_packages (remote-exec): Reading package lists... 58%
+null_resource.install_packages (remote-exec): Reading package lists... 58%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 64%
+null_resource.install_packages (remote-exec): Reading package lists... 64%
+null_resource.install_packages (remote-exec): Reading package lists... 66%
+null_resource.install_packages (remote-exec): Reading package lists... 66%
+null_resource.install_packages (remote-exec): Reading package lists... 72%
+null_resource.install_packages (remote-exec): Reading package lists... 72%
+null_resource.install_packages (remote-exec): Reading package lists... 75%
+null_resource.install_packages (remote-exec): Reading package lists... 75%
+null_resource.install_packages (remote-exec): Reading package lists... 78%
+null_resource.install_packages (remote-exec): Reading package lists... 78%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 84%
+null_resource.install_packages (remote-exec): Reading package lists... 84%
+null_resource.install_packages (remote-exec): Reading package lists... 87%
+null_resource.install_packages (remote-exec): Reading package lists... 87%
+null_resource.install_packages (remote-exec): Reading package lists... 92%
+null_resource.install_packages (remote-exec): Reading package lists... 92%
+null_resource.install_packages (remote-exec): Reading package lists... 95%
+null_resource.install_packages (remote-exec): Reading package lists... 95%
+null_resource.install_packages (remote-exec): Reading package lists... 98%
+null_resource.install_packages (remote-exec): Reading package lists... 98%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... Done
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 100%
+null_resource.install_packages (remote-exec): Reading package lists... Done
+null_resource.install_packages (remote-exec): Building dependency tree... 0%
+null_resource.install_packages (remote-exec): Building dependency tree... 0%
+null_resource.install_packages (remote-exec): Building dependency tree... 50%
+null_resource.install_packages (remote-exec): Building dependency tree... 50%
+null_resource.install_packages (remote-exec): Building dependency tree... Done
+null_resource.install_packages (remote-exec): Reading state information... 0%
+null_resource.install_packages (remote-exec): Reading state information... 0%
+null_resource.install_packages (remote-exec): Reading state information... Done
+null_resource.install_packages (remote-exec): The following additional packages will be installed:
+null_resource.install_packages (remote-exec):   apache2-bin apache2-data
+null_resource.install_packages (remote-exec):   apache2-utils bzip2 libapr1
+null_resource.install_packages (remote-exec):   libaprutil1 libaprutil1-dbd-sqlite3
+null_resource.install_packages (remote-exec):   libaprutil1-ldap liblua5.3-0 mailcap
+null_resource.install_packages (remote-exec):   mime-support ssl-cert
+null_resource.install_packages (remote-exec): Suggested packages:
+null_resource.install_packages (remote-exec):   apache2-doc apache2-suexec-pristine
+null_resource.install_packages (remote-exec):   | apache2-suexec-custom www-browser
+null_resource.install_packages (remote-exec):   bzip2-doc
+null_resource.install_packages (remote-exec): The following NEW packages will be installed:
+null_resource.install_packages (remote-exec):   apache2 apache2-bin apache2-data
+null_resource.install_packages (remote-exec):   apache2-utils bzip2 libapr1
+null_resource.install_packages (remote-exec):   libaprutil1 libaprutil1-dbd-sqlite3
+null_resource.install_packages (remote-exec):   libaprutil1-ldap liblua5.3-0 mailcap
+null_resource.install_packages (remote-exec):   mime-support ssl-cert
+null_resource.install_packages (remote-exec): 0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+null_resource.install_packages (remote-exec): Need to get 2138 kB of archives.
+null_resource.install_packages (remote-exec): After this operation, 8521 kB of additional disk space will be used.
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): Get:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.1 [108 kB]
+null_resource.install_packages (remote-exec): 0% [1 libapr1 0 B/108 kB 0%]
+null_resource.install_packages (remote-exec): 6% [Working]
+null_resource.install_packages (remote-exec): Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92.8 kB]
+null_resource.install_packages (remote-exec): 6% [2 libaprutil1 0 B/92.8 kB 0%]
+null_resource.install_packages (remote-exec): 11% [Working]
+null_resource.install_packages (remote-exec): Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11.3 kB]
+null_resource.install_packages (remote-exec): 11% [3 libaprutil1-dbd-sqlite3 0 B/11.3
+null_resource.install_packages (remote-exec): 13% [Working]
+null_resource.install_packages (remote-exec): Get:4 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9170 B]
+null_resource.install_packages (remote-exec): 13% [4 libaprutil1-ldap 0 B/9170 B 0%]
+null_resource.install_packages (remote-exec): 14% [Working]
+null_resource.install_packages (remote-exec): Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 liblua5.3-0 amd64 5.3.6-1build1 [140 kB]
+null_resource.install_packages (remote-exec): 14% [5 liblua5.3-0 0 B/140 kB 0%]
+null_resource.install_packages (remote-exec): 21% [Working]
+null_resource.install_packages (remote-exec): Get:6 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.8 [1346 kB]
+null_resource.install_packages (remote-exec): 21% [6 apache2-bin 0 B/1346 kB 0%]
+null_resource.install_packages (remote-exec): 73% [Working]
+null_resource.install_packages (remote-exec): Get:7 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.8 [165 kB]
+null_resource.install_packages (remote-exec): 73% [7 apache2-data 0 B/165 kB 0%]
+null_resource.install_packages (remote-exec): 81% [Working]
+null_resource.install_packages (remote-exec): Get:8 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.8 [88.6 kB]
+null_resource.install_packages (remote-exec): 81% [8 apache2-utils 0 B/88.6 kB 0%]
+null_resource.install_packages (remote-exec): 86% [Working]
+null_resource.install_packages (remote-exec): Get:9 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+null_resource.install_packages (remote-exec): 86% [9 mailcap 0 B/23.8 kB 0%]
+null_resource.install_packages (remote-exec): 88% [Working]
+null_resource.install_packages (remote-exec): Get:10 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+null_resource.install_packages (remote-exec): 88% [10 mime-support 0 B/3696 B 0%]
+null_resource.install_packages (remote-exec): 90% [Working]
+null_resource.install_packages (remote-exec): Get:11 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.8 [97.9 kB]
+null_resource.install_packages (remote-exec): 90% [11 apache2 0 B/97.9 kB 0%]
+null_resource.install_packages (remote-exec): 95% [Working]
+null_resource.install_packages (remote-exec): Get:12 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+null_resource.install_packages (remote-exec): 95% [12 bzip2 0 B/34.8 kB 0%]
+null_resource.install_packages (remote-exec): 98% [Working]
+null_resource.install_packages (remote-exec): Get:13 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+null_resource.install_packages (remote-exec): 98% [13 ssl-cert 0 B/17.4 kB 0%]
+null_resource.install_packages (remote-exec): 100% [Working]
+null_resource.install_packages (remote-exec): Fetched 2138 kB in 0s (15.8 MB/s)
+null_resource.install_packages (remote-exec): Preconfiguring packages ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package libapr1:amd64.
+null_resource.install_packages: Still creating... [20s elapsed]
+null_resource.install_packages (remote-exec): (Reading database ...
+null_resource.install_packages (remote-exec): (Reading database ... 5%
+null_resource.install_packages (remote-exec): (Reading database ... 10%
+null_resource.install_packages (remote-exec): (Reading database ... 15%
+null_resource.install_packages (remote-exec): (Reading database ... 20%
+null_resource.install_packages (remote-exec): (Reading database ... 25%
+null_resource.install_packages (remote-exec): (Reading database ... 30%
+null_resource.install_packages (remote-exec): (Reading database ... 35%
+null_resource.install_packages (remote-exec): (Reading database ... 40%
+null_resource.install_packages (remote-exec): (Reading database ... 45%
+null_resource.install_packages (remote-exec): (Reading database ... 50%
+null_resource.install_packages (remote-exec): (Reading database ... 55%
+null_resource.install_packages (remote-exec): (Reading database ... 60%
+null_resource.install_packages (remote-exec): (Reading database ... 65%
+null_resource.install_packages (remote-exec): (Reading database ... 70%
+null_resource.install_packages (remote-exec): (Reading database ... 75%
+null_resource.install_packages (remote-exec): (Reading database ... 80%
+null_resource.install_packages (remote-exec): (Reading database ... 85%
+null_resource.install_packages (remote-exec): (Reading database ... 90%
+null_resource.install_packages (remote-exec): (Reading database ... 95%
+null_resource.install_packages (remote-exec): (Reading database ... 100%
+null_resource.install_packages (remote-exec): (Reading database ... 65283 files and directories currently installed.)
+null_resource.install_packages (remote-exec): Preparing to unpack .../00-libapr1_1.7.0-8ubuntu0.22.04.1_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package libaprutil1:amd64.
+null_resource.install_packages (remote-exec): Preparing to unpack .../01-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+null_resource.install_packages (remote-exec): Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package libaprutil1-ldap:amd64.
+null_resource.install_packages (remote-exec): Preparing to unpack .../03-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package liblua5.3-0:amd64.
+null_resource.install_packages (remote-exec): Preparing to unpack .../04-liblua5.3-0_5.3.6-1build1_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking liblua5.3-0:amd64 (5.3.6-1build1) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package apache2-bin.
+null_resource.install_packages (remote-exec): Preparing to unpack .../05-apache2-bin_2.4.52-1ubuntu4.8_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking apache2-bin (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package apache2-data.
+null_resource.install_packages (remote-exec): Preparing to unpack .../06-apache2-data_2.4.52-1ubuntu4.8_all.deb ...
+null_resource.install_packages (remote-exec): Unpacking apache2-data (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package apache2-utils.
+null_resource.install_packages (remote-exec): Preparing to unpack .../07-apache2-utils_2.4.52-1ubuntu4.8_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking apache2-utils (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package mailcap.
+null_resource.install_packages (remote-exec): Preparing to unpack .../08-mailcap_3.70+nmu1ubuntu1_all.deb ...
+null_resource.install_packages (remote-exec): Unpacking mailcap (3.70+nmu1ubuntu1) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package mime-support.
+null_resource.install_packages (remote-exec): Preparing to unpack .../09-mime-support_3.66_all.deb ...
+null_resource.install_packages (remote-exec): Unpacking mime-support (3.66) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package apache2.
+null_resource.install_packages (remote-exec): Preparing to unpack .../10-apache2_2.4.52-1ubuntu4.8_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking apache2 (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package bzip2.
+null_resource.install_packages (remote-exec): Preparing to unpack .../11-bzip2_1.0.8-5build1_amd64.deb ...
+null_resource.install_packages (remote-exec): Unpacking bzip2 (1.0.8-5build1) ...
+null_resource.install_packages (remote-exec): Selecting previously unselected package ssl-cert.
+null_resource.install_packages (remote-exec): Preparing to unpack .../12-ssl-cert_1.1.2_all.deb ...
+null_resource.install_packages (remote-exec): Unpacking ssl-cert (1.1.2) ...
+null_resource.install_packages (remote-exec): Setting up libapr1:amd64 (1.7.0-8ubuntu0.22.04.1) ...
+null_resource.install_packages (remote-exec): Setting up bzip2 (1.0.8-5build1) ...
+null_resource.install_packages (remote-exec): Setting up ssl-cert (1.1.2) ...
+null_resource.install_packages (remote-exec): Setting up liblua5.3-0:amd64 (5.3.6-1build1) ...
+null_resource.install_packages (remote-exec): Setting up apache2-data (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Setting up mailcap (3.70+nmu1ubuntu1) ...
+null_resource.install_packages (remote-exec): Setting up libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Setting up mime-support (3.66) ...
+null_resource.install_packages (remote-exec): Setting up libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+null_resource.install_packages (remote-exec): Setting up apache2-utils (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Setting up apache2-bin (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Setting up apache2 (2.4.52-1ubuntu4.8) ...
+null_resource.install_packages (remote-exec): Enabling module mpm_event.
+null_resource.install_packages (remote-exec): Enabling module authz_core.
+null_resource.install_packages (remote-exec): Enabling module authz_host.
+null_resource.install_packages (remote-exec): Enabling module authn_core.
+null_resource.install_packages (remote-exec): Enabling module auth_basic.
+null_resource.install_packages (remote-exec): Enabling module access_compat.
+null_resource.install_packages (remote-exec): Enabling module authn_file.
+null_resource.install_packages (remote-exec): Enabling module authz_user.
+null_resource.install_packages (remote-exec): Enabling module alias.
+null_resource.install_packages (remote-exec): Enabling module dir.
+null_resource.install_packages (remote-exec): Enabling module autoindex.
+null_resource.install_packages (remote-exec): Enabling module env.
+null_resource.install_packages (remote-exec): Enabling module mime.
+null_resource.install_packages (remote-exec): Enabling module negotiation.
+null_resource.install_packages (remote-exec): Enabling module setenvif.
+null_resource.install_packages (remote-exec): Enabling module filter.
+null_resource.install_packages (remote-exec): Enabling module deflate.
+null_resource.install_packages (remote-exec): Enabling module status.
+null_resource.install_packages (remote-exec): Enabling module reqtimeout.
+null_resource.install_packages (remote-exec): Enabling conf charset.
+null_resource.install_packages (remote-exec): Enabling conf localized-error-pages.
+null_resource.install_packages (remote-exec): Enabling conf other-vhosts-access-log.
+null_resource.install_packages (remote-exec): Enabling conf security.
+null_resource.install_packages (remote-exec): Enabling conf serve-cgi-bin.
+null_resource.install_packages (remote-exec): Enabling site 000-default.
+null_resource.install_packages (remote-exec): Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+null_resource.install_packages (remote-exec): Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+null_resource.install_packages (remote-exec): Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+null_resource.install_packages (remote-exec): Processing triggers for man-db (2.10.2-1) ...
+null_resource.install_packages (remote-exec): Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [                ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [=               ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [==              ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [===             ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [====            ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [=====           ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [======          ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [=======         ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [========        ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [=========       ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [==========      ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages: Still creating... [30s elapsed]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [===========     ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [============    ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============   ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [==============  ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [=============== ]
+null_resource.install_packages (remote-exec): Scanning processes... [================]
+null_resource.install_packages (remote-exec): Scanning processes...
+null_resource.install_packages (remote-exec): Scanning linux images... [             ]
+null_resource.install_packages (remote-exec): Scanning linux images... [====         ]
+null_resource.install_packages (remote-exec): Scanning linux images... [=============]
+null_resource.install_packages (remote-exec): Scanning linux images...
+
+null_resource.install_packages (remote-exec): Running kernel seems to be up-to-date.
+
+null_resource.install_packages (remote-exec): No services need to be restarted.
+
+null_resource.install_packages (remote-exec): No containers need to be restarted.
+
+null_resource.install_packages (remote-exec): No user sessions are running outdated
+null_resource.install_packages (remote-exec):  binaries.
+
+null_resource.install_packages (remote-exec): No VM guests are running outdated
+null_resource.install_packages (remote-exec):  hypervisor (qemu) binaries on this
+null_resource.install_packages (remote-exec):  host.
+null_resource.install_packages: Creation complete after 32s [id=2588199948430927155]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+public-ip = "3.137.187.141"
+PS C:\training\day1> ssh -i c:\users\Admin\.ssh\itashi-key.pem ubuntu@3.137.187.141
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-1016-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+  System information as of Wed Mar 27 06:35:54 UTC 2024
+
+  System load:  0.0               Processes:             98
+  Usage of /:   20.8% of 7.57GB   Users logged in:       0
+  Memory usage: 20%               IPv4 address for eth0: 172.31.3.253
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Wed Mar 27 06:35:57 2024 from 183.82.117.119
+ubuntu@ip-172-31-3-253:~$ apache2 -v
+Server version: Apache/2.4.52 (Ubuntu)
+Server built:   2024-01-17T03:00:18
+ubuntu@ip-172-31-3-253:~$ exit
+logout
+Connection to 3.137.187.141 closed.
+PS C:\training\day1> terraform.exe apply -auto-approve
+╷
+│ Error: Missing item separator
+│
+│   on main.tf line 65, in resource "aws_security_group" "ubuntu":
+│   54: ingress = [{
+│   55:     to_port          = 22
+│   56:     from_port        = 22
+│   57:     protocol         = "tcp"
+│   58:     cidr_blocks      = ["0.0.0.0/0"]
+│   59:     security_groups  = []
+│   61:     prefix_list_ids  = []
+│   62:     self             = false
+│   63:     description      = "Port 22 for outbound access."
+│   64:   }
+│   65:   {
+│
+│ Expected a comma to mark the beginning of the next item.
+╵
+PS C:\training\day1> terraform.exe apply -auto-approve
+tls_private_key.keypair: Refreshing state... [id=d9fbf98c9c6b379e9137eb0350e8884c25e37b9f]
+local_file.tls_private_key: Refreshing state... [id=b966a6673c53e9a6f970c9551b17c03d0787206e]
+aws_key_pair.keypair: Refreshing state... [id=itashi-key]
+data.aws_ami.ubuntu: Reading...
+aws_security_group.ubuntu: Refreshing state... [id=sg-063512929027095be]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-068cf3d51efeb20d6]
+aws_instance.ubuntu: Refreshing state... [id=i-05cf77357c710ee05]
+null_resource.install_packages: Refreshing state... [id=2588199948430927155]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_security_group.ubuntu will be updated in-place
+  ~ resource "aws_security_group" "ubuntu" {
+        id                     = "sg-063512929027095be"
+      ~ ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = "HTTP Port"
+              + from_port        = 80
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 80
+            },
+            # (1 unchanged element hidden)
+        ]
+        name                   = "itashi-key"
+        tags                   = {}
+        # (7 unchanged attributes hidden)
+    }
+
+aws_security_group.ubuntu: Modifying... [id=sg-063512929027095be]
+aws_security_group.ubuntu: Modifications complete after 2s [id=sg-063512929027095be]
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+public-ip = "3.137.187.141"
+PS C:\training\day1> terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Finding latest version of hashicorp/http...
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Reusing previous version of hashicorp/null from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/aws v5.42.0
+- Using previously-installed hashicorp/tls v4.0.5
+- Installing hashicorp/http v3.4.2...
+- Installed hashicorp/http v3.4.2 (signed by HashiCorp)
+- Using previously-installed hashicorp/local v2.5.1
+- Using previously-installed hashicorp/null v3.2.2
+
+Terraform has made some changes to the provider dependency selections recorded
+in the .terraform.lock.hcl file. Review those changes and commit them to your
+version control system if they represent changes you intended to make.
+
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+PS C:\training\day1> terraform.exe apply -auto-approve
+tls_private_key.keypair: Refreshing state... [id=d9fbf98c9c6b379e9137eb0350e8884c25e37b9f]
+local_file.tls_private_key: Refreshing state... [id=b966a6673c53e9a6f970c9551b17c03d0787206e]
+data.aws_ami.ubuntu: Reading...
+aws_key_pair.keypair: Refreshing state... [id=itashi-key]
+aws_security_group.ubuntu: Refreshing state... [id=sg-063512929027095be]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-068cf3d51efeb20d6]
+aws_instance.ubuntu: Refreshing state... [id=i-05cf77357c710ee05]
+null_resource.install_packages: Refreshing state... [id=2588199948430927155]
+data.http.access_apache: Reading...
+data.http.access_apache: Read complete after 0s [id=http://3.137.187.141:80]
+
+
+Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+public-ip = "3.137.187.141"
+PS C:\training\day1> terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/null from the dependency lock file
+- Finding latest version of hashicorp/template...
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Reusing previous version of hashicorp/http from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Using previously-installed hashicorp/http v3.4.2
+- Using previously-installed hashicorp/aws v5.42.0
+- Using previously-installed hashicorp/local v2.5.1
+- Using previously-installed hashicorp/null v3.2.2
+- Installing hashicorp/template v2.2.0...
+- Installed hashicorp/template v2.2.0 (signed by HashiCorp)
+- Using previously-installed hashicorp/tls v4.0.5
+
+Terraform has made some changes to the provider dependency selections recorded
+in the .terraform.lock.hcl file. Review those changes and commit them to your
+version control system if they represent changes you intended to make.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+PS C:\training\day1> terraform.exe apply -auto-approve
+tls_private_key.keypair: Refreshing state... [id=d9fbf98c9c6b379e9137eb0350e8884c25e37b9f]
+local_file.tls_private_key: Refreshing state... [id=b966a6673c53e9a6f970c9551b17c03d0787206e]
+aws_key_pair.keypair: Refreshing state... [id=itashi-key]
+data.aws_ami.ubuntu: Reading...
+aws_security_group.ubuntu: Refreshing state... [id=sg-063512929027095be]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-068cf3d51efeb20d6]
+aws_instance.ubuntu: Refreshing state... [id=i-05cf77357c710ee05]
+null_resource.install_packages: Refreshing state... [id=2588199948430927155]
+data.http.access_apache: Reading...
+data.http.access_apache: Read complete after 1s [id=http://3.137.187.141:80]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # local_file.index_html will be created
+  + resource "local_file" "index_html" {
+      + content              = (known after apply)
+      + content_base64sha256 = (known after apply)
+      + content_base64sha512 = (known after apply)
+      + content_md5          = (known after apply)
+      + content_sha1         = (known after apply)
+      + content_sha256       = (known after apply)
+      + content_sha512       = (known after apply)
+      + directory_permission = "0777"
+      + file_permission      = "0777"
+      + filename             = "index.html"
+      + id                   = (known after apply)
+    }
+
+  # template_file.index_html will be created
+  + resource "template_file" "index_html" {
+      + id       = (known after apply)
+      + rendered = (known after apply)
+      + template = <<-EOT
+            <br>This is apache instance is running on Server with Private IP:: ${PRIVATE_IP}</br>
+            <br>Firewall rules are managed using:: ${SECURITY_GROUP} Security Group.</br>
+        EOT
+      + vars     = {
+          + "PRIVATE_IP"     = "172.31.3.253"
+          + "SECURITY_GROUP" = "itashi-key"
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+template_file.index_html: Creating...
+template_file.index_html: Creation complete after 0s [id=14857c468bef2519d7bd7c8854147522da5f2fe8ff9fc42b7007f0df0b3807f2]
+local_file.index_html: Creating...
+local_file.index_html: Creation complete after 0s [id=603908c7c5e5a953ddaeef22c2f0e5abdc179460]
+╷
+│ Warning: using template_file as a resource is deprecated; consider using the data source instead
+│
+│   with template_file.index_html,
+│   on main.tf line 110, in resource "template_file" "index_html":
+│  110: resource "template_file" "index_html" {
+│
+│ (and 2 more similar warnings elsewhere)
+╵
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+public-ip = "3.137.187.141"
+PS C:\training\day1> terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Reusing previous version of hashicorp/null from the dependency lock file
+- Reusing previous version of hashicorp/template from the dependency lock file
+- Reusing previous version of hashicorp/http from the dependency lock file
+- Using previously-installed hashicorp/template v2.2.0
+- Using previously-installed hashicorp/http v3.4.2
+- Using previously-installed hashicorp/aws v5.42.0
+- Using previously-installed hashicorp/tls v4.0.5
+- Using previously-installed hashicorp/local v2.5.1
+- Using previously-installed hashicorp/null v3.2.2
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+PS C:\training\day1> terraform.exe apply -auto-approve
+tls_private_key.keypair: Refreshing state... [id=d9fbf98c9c6b379e9137eb0350e8884c25e37b9f]
+local_file.tls_private_key: Refreshing state... [id=b966a6673c53e9a6f970c9551b17c03d0787206e]
+data.aws_ami.ubuntu: Reading...
+aws_key_pair.keypair: Refreshing state... [id=itashi-key]
+aws_security_group.ubuntu: Refreshing state... [id=sg-063512929027095be]
+data.aws_ami.ubuntu: Read complete after 1s [id=ami-068cf3d51efeb20d6]
+aws_instance.ubuntu: Refreshing state... [id=i-05cf77357c710ee05]
+template_file.index_html: Refreshing state... [id=14857c468bef2519d7bd7c8854147522da5f2fe8ff9fc42b7007f0df0b3807f2]
+local_file.index_html: Refreshing state... [id=603908c7c5e5a953ddaeef22c2f0e5abdc179460]
+null_resource.install_packages: Refreshing state... [id=2588199948430927155]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+-/+ destroy and then create replacement
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # data.http.access_apache will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "http" "access_apache" {
+      + body                 = (known after apply)
+      + id                   = (known after apply)
+      + method               = "HEAD"
+      + response_body        = (known after apply)
+      + response_body_base64 = (known after apply)
+      + response_headers     = (known after apply)
+      + status_code          = (known after apply)
+      + url                  = "http://3.137.187.141:80"
+    }
+
+  # null_resource.copy_index_html will be created
+  + resource "null_resource" "copy_index_html" {
+      + id       = (known after apply)
+      + triggers = {
+          + "index_html" = "603908c7c5e5a953ddaeef22c2f0e5abdc179460"
+        }
+    }
+
+  # null_resource.install_packages must be replaced
+-/+ resource "null_resource" "install_packages" {
+      ~ id       = "2588199948430927155" -> (known after apply)
+      + triggers = { # forces replacement
+          + "copy_index_html" = (known after apply)
+        }
+    }
+
+Plan: 2 to add, 0 to change, 1 to destroy.
+null_resource.install_packages: Destroying... [id=2588199948430927155]
+null_resource.install_packages: Destruction complete after 0s
+null_resource.copy_index_html: Creating...
+null_resource.copy_index_html: Provisioning with 'file'...
+null_resource.copy_index_html: Creation complete after 3s [id=1134405892482503569]
+null_resource.install_packages: Creating...
+null_resource.install_packages: Provisioning with 'remote-exec'...
+null_resource.install_packages (remote-exec): Connecting to remote host via SSH...
+null_resource.install_packages (remote-exec):   Host: 3.137.187.141
+null_resource.install_packages (remote-exec):   User: ubuntu
+null_resource.install_packages (remote-exec):   Password: false
+null_resource.install_packages (remote-exec):   Private key: true
+null_resource.install_packages (remote-exec):   Certificate: false
+null_resource.install_packages (remote-exec):   SSH Agent: false
+null_resource.install_packages (remote-exec):   Checking Host Key: false
+null_resource.install_packages (remote-exec):   Target Platform: unix
+null_resource.install_packages (remote-exec): Connected!
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+null_resource.install_packages (remote-exec): 0% [Connecting to security.ubuntu.com (
+null_resource.install_packages (remote-exec): Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+null_resource.install_packages (remote-exec): Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
+null_resource.install_packages (remote-exec): 0% [Connecting to security.ubuntu.com (
+null_resource.install_packages (remote-exec): Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+null_resource.install_packages (remote-exec): 0% [4 InRelease 14.2 kB/110 kB 13%]
+null_resource.install_packages (remote-exec): 0% [4 InRelease 14.2 kB/110 kB 13%]
+null_resource.install_packages (remote-exec): 0% [4 InRelease 98.2 kB/110 kB 89%]
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): 0% [Working]
+null_resource.install_packages (remote-exec): 100% [Working]
+null_resource.install_packages (remote-exec): Fetched 229 kB in 1s (306 kB/s)
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 3%
+null_resource.install_packages (remote-exec): Reading package lists... 3%
+null_resource.install_packages (remote-exec): Reading package lists... 5%
+null_resource.install_packages (remote-exec): Reading package lists... 5%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 6%
+null_resource.install_packages (remote-exec): Reading package lists... 34%
+null_resource.install_packages (remote-exec): Reading package lists... 42%
+null_resource.install_packages (remote-exec): Reading package lists... 42%
+null_resource.install_packages (remote-exec): Reading package lists... 58%
+null_resource.install_packages (remote-exec): Reading package lists... 58%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 59%
+null_resource.install_packages (remote-exec): Reading package lists... 64%
+null_resource.install_packages (remote-exec): Reading package lists... 64%
+null_resource.install_packages (remote-exec): Reading package lists... 66%
+null_resource.install_packages (remote-exec): Reading package lists... 66%
+null_resource.install_packages (remote-exec): Reading package lists... 72%
+null_resource.install_packages (remote-exec): Reading package lists... 72%
+null_resource.install_packages (remote-exec): Reading package lists... 75%
+null_resource.install_packages (remote-exec): Reading package lists... 75%
+null_resource.install_packages (remote-exec): Reading package lists... 78%
+null_resource.install_packages (remote-exec): Reading package lists... 78%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 80%
+null_resource.install_packages (remote-exec): Reading package lists... 84%
+null_resource.install_packages (remote-exec): Reading package lists... 84%
+null_resource.install_packages (remote-exec): Reading package lists... 87%
+null_resource.install_packages (remote-exec): Reading package lists... 87%
+null_resource.install_packages (remote-exec): Reading package lists... 92%
+null_resource.install_packages (remote-exec): Reading package lists... 92%
+null_resource.install_packages (remote-exec): Reading package lists... 95%
+null_resource.install_packages (remote-exec): Reading package lists... 95%
+null_resource.install_packages (remote-exec): Reading package lists... 98%
+null_resource.install_packages (remote-exec): Reading package lists... 98%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... 99%
+null_resource.install_packages (remote-exec): Reading package lists... Done
+null_resource.install_packages: Still creating... [10s elapsed]
+null_resource.install_packages (remote-exec): Reading package lists... 0%
+null_resource.install_packages (remote-exec): Reading package lists... 100%
+null_resource.install_packages (remote-exec): Reading package lists... Done
+null_resource.install_packages (remote-exec): Building dependency tree... 0%
+null_resource.install_packages (remote-exec): Building dependency tree... 0%
+null_resource.install_packages (remote-exec): Building dependency tree... 50%
+null_resource.install_packages (remote-exec): Building dependency tree... 50%
+null_resource.install_packages (remote-exec): Building dependency tree... Done
+null_resource.install_packages (remote-exec): Reading state information... 0%
+null_resource.install_packages (remote-exec): Reading state information... 0%
+null_resource.install_packages (remote-exec): Reading state information... Done
+null_resource.install_packages (remote-exec): apache2 is already the newest version (2.4.52-1ubuntu4.8).
+null_resource.install_packages (remote-exec): 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+null_resource.install_packages: Creation complete after 12s [id=9147020159905229556]
+data.http.access_apache: Reading...
+data.http.access_apache: Read complete after 0s [id=http://3.137.187.141:80]
+╷
+│ Warning: using template_file as a resource is deprecated; consider using the data source instead
+│
+│   with template_file.index_html,
+│   on main.tf line 118, in resource "template_file" "index_html":
+│  118: resource "template_file" "index_html" {
+│
+│ (and one more similar warning elsewhere)
+╵
+
+Apply complete! Resources: 2 added, 0 changed, 1 destroyed.
+
+Outputs:
+
+public-ip = "3.137.187.141"
+PS C:\training\day1>
+
+
+############################################################################################################################################################################################################################3
+Commands using history:
+Id CommandLine
+  -- -----------
+   1 try { . "c:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\browser\media\shellIntegration.ps1" } catch {}
+   2 terraform.exe apply
+   3 terraform init
+   4 terraform.exe apply
+   5 terraform.exe apply
+   6 terraform.exe apply
+   7 terraform.exe apply -auto-approve
+   8 terraform.exe apply -auto-approve
+   9 terraform.exe apply -auto-approve
+  10 terraform.exe apply -auto-approve
+  11 terraform init
+  12 terraform.exe apply -auto-approve
+  13 ssh -i c:\users\Admin\.ssh\itashi-key.pem ubuntu@3.137.187.141
+  14 terraform init
+  15 terraform.exe apply -auto-approve
+  16 ssh -i c:\users\Admin\.ssh\itashi-key.pem ubuntu@3.137.187.141
+  17 terraform.exe apply -auto-approve
+  18 terraform.exe apply -auto-approve
+  19 terraform init
+  20 terraform.exe apply -auto-approve
+  21 terraform init
+  22 terraform.exe apply -auto-approve
+  23 terraform init
+  24 terraform.exe apply -auto-approve
+
+
+
+###########################################################################################
+main.tf fileL
+provider "aws" {
+  region = "us-east-2" #OHIO
+}
+
+provider "tls" {}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_instance" "ubuntu" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+   tags = {
+    Name = "Itashi"
+  }
+  key_name=aws_key_pair.keypair.key_name
+  vpc_security_group_ids=[
+    aws_security_group.ubuntu.id
+  ]
+}
+resource "tls_private_key" "keypair" {
+  algorithm = "RSA"
+  rsa_bits = 2048
+}
+resource "aws_key_pair" "keypair" {
+  key_name = "itashi-key"
+  public_key = tls_private_key.keypair.public_key_openssh
+}
+
+resource "aws_security_group" "ubuntu"{
+  name="itashi-key"
+  description="Managed by terraform"
+    egress = [{
+    to_port          = 0
+    from_port        = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    security_groups  = []
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    self             = false
+    description      = "All open for outbound access."
+  }]
+ingress = [{
+    to_port          = 22
+    from_port        = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    security_groups  = []
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    self             = false
+    description      = "Port 22 for outbound access."
+  },
+  {
+    to_port          = 80
+    from_port        = 80
+    protocol         = "TCP"
+    cidr_blocks      = ["0.0.0.0/0"]
+    security_groups  = []
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    self             = false
+    description      = "HTTP Port"
+  }] 
+}
+
+output "public-ip" {
+  value = aws_instance.ubuntu.public_ip
+}
+
+resource "local_file" "tls_private_key" {
+  filename = "c:/users/Admin/.ssh/itashi-key.pem"
+  content = tls_private_key.keypair.private_key_pem
+  file_permission = "0600"
+}
+
+resource "null_resource" "install_packages" {
+   depends_on = [ 
+    null_resource.copy_index_html
+  ]
+  triggers = {
+    copy_index_html = null_resource.copy_index_html.id
+  }
+
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      host        = aws_instance.ubuntu.public_ip
+      user        = "ubuntu"
+      private_key = tls_private_key.keypair.private_key_pem
+    }
+    inline = [
+      "sudo apt-get update -y && sudo apt-get install -y apache2",
+       "sudo cp /tmp/index.html /var/www/html/index.html"
+    ]
+  }
+}
+
+data "http" "access_apache" {
+  depends_on = [ 
+    null_resource.install_packages
+  ]
+  url = "http://${aws_instance.ubuntu.public_ip}:80"
+  method = "HEAD"
+}
+
+resource "template_file" "index_html" {
+  template = file("./index.html.tpl")
+  vars = {
+    PRIVATE_IP = aws_instance.ubuntu.private_ip
+    SECURITY_GROUP = aws_security_group.ubuntu.name
+  }
+}
+resource "local_file" "index_html" {
+  filename = "index.html"
+  content = template_file.index_html.rendered
+}
+
+resource "null_resource" "copy_index_html" {
+  triggers = {
+    index_html = local_file.index_html.id
+  }
+  provisioner "file" {
+    connection {
+      type        = "ssh"
+      host        = aws_instance.ubuntu.public_ip
+      user        = "ubuntu"
+      private_key = tls_private_key.keypair.private_key_pem
+    }
+    source = "index.html"
+    destination = "/tmp/index.html"
+  }
+}
+
+
+
+
+
+#################################################################################################################################################################
+
+index.html file:
+<br>This is apache instance is running on Server with Private IP:: 172.31.3.253</br>
+<br>Firewall rules are managed using:: itashi-key Security Group.</br>
+
+
+
+
+###################################################################################################################################################################
+terraform.tfstate -->automatically generated file:
+
+{
+  "version": 4,
+  "terraform_version": "1.7.5",
+  "serial": 34,
+  "lineage": "54552ba2-f6e5-b5bc-2443-4018554f57a2",
+  "outputs": {
+    "public-ip": {
+      "value": "3.137.187.141",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_ami",
+      "name": "ubuntu",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architecture": "x86_64",
+            "arn": "arn:aws:ec2:us-east-2::image/ami-068cf3d51efeb20d6",
+            "block_device_mappings": [
+              {
+                "device_name": "/dev/sda1",
+                "ebs": {
+                  "delete_on_termination": "true",
+                  "encrypted": "false",
+                  "iops": "0",
+                  "snapshot_id": "snap-0fa5d5727bbbbd158",
+                  "throughput": "0",
+                  "volume_size": "8",
+                  "volume_type": "gp2"
+                },
+                "no_device": "",
+                "virtual_name": ""
+              },
+              {
+                "device_name": "/dev/sdb",
+                "ebs": {},
+                "no_device": "",
+                "virtual_name": "ephemeral0"
+              },
+              {
+                "device_name": "/dev/sdc",
+                "ebs": {},
+                "no_device": "",
+                "virtual_name": "ephemeral1"
+              }
+            ],
+            "boot_mode": "uefi-preferred",
+            "creation_date": "2024-03-26T03:06:26.000Z",
+            "deprecation_time": "2026-03-26T03:06:26.000Z",
+            "description": "Canonical, Ubuntu, 22.04 LTS, amd64 jammy image build on 2024-03-26",
+            "ena_support": true,
+            "executable_users": null,
+            "filter": [
+              {
+                "name": "name",
+                "values": [
+                  "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
+                ]
+              },
+              {
+                "name": "virtualization-type",
+                "values": [
+                  "hvm"
+                ]
+              }
+            ],
+            "hypervisor": "xen",
+            "id": "ami-068cf3d51efeb20d6",
+            "image_id": "ami-068cf3d51efeb20d6",
+            "image_location": "amazon/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20240326",
+            "image_owner_alias": "amazon",
+            "image_type": "machine",
+            "imds_support": "",
+            "include_deprecated": false,
+            "kernel_id": "",
+            "most_recent": true,
+            "name": "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20240326",
+            "name_regex": null,
+            "owner_id": "099720109477",
+            "owners": [
+              "099720109477"
+            ],
+            "platform": "",
+            "platform_details": "Linux/UNIX",
+            "product_codes": [],
+            "public": true,
+            "ramdisk_id": "",
+            "root_device_name": "/dev/sda1",
+            "root_device_type": "ebs",
+            "root_snapshot_id": "snap-0fa5d5727bbbbd158",
+            "sriov_net_support": "simple",
+            "state": "available",
+            "state_reason": {
+              "code": "UNSET",
+              "message": "UNSET"
+            },
+            "tags": {},
+            "timeouts": null,
+            "tpm_support": "",
+            "usage_operation": "RunInstances",
+            "virtualization_type": "hvm"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "http",
+      "name": "access_apache",
+      "provider": "provider[\"registry.terraform.io/hashicorp/http\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "body": "",
+            "ca_cert_pem": null,
+            "id": "http://3.137.187.141:80",
+            "insecure": null,
+            "method": "HEAD",
+            "request_body": null,
+            "request_headers": null,
+            "request_timeout_ms": null,
+            "response_body": "",
+            "response_body_base64": "",
+            "response_headers": {
+              "Accept-Ranges": "bytes",
+              "Content-Length": "156",
+              "Content-Type": "text/html",
+              "Date": "Wed, 27 Mar 2024 08:08:32 GMT",
+              "Etag": "\"9c-6149fe98c7578\"",
+              "Last-Modified": "Wed, 27 Mar 2024 08:08:30 GMT",
+              "Server": "Apache/2.4.52 (Ubuntu)",
+              "Vary": "Accept-Encoding"
+            },
+            "retry": null,
+            "status_code": 200,
+            "url": "http://3.137.187.141:80"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "ubuntu",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "ami": "ami-068cf3d51efeb20d6",
+            "arn": "arn:aws:ec2:us-east-2:554660509057:instance/i-05cf77357c710ee05",
+            "associate_public_ip_address": true,
+            "availability_zone": "us-east-2a",
+            "capacity_reservation_specification": [
+              {
+                "capacity_reservation_preference": "open",
+                "capacity_reservation_target": []
+              }
+            ],
+            "cpu_core_count": 1,
+            "cpu_options": [
+              {
+                "amd_sev_snp": "",
+                "core_count": 1,
+                "threads_per_core": 1
+              }
+            ],
+            "cpu_threads_per_core": 1,
+            "credit_specification": [
+              {
+                "cpu_credits": "standard"
+              }
+            ],
+            "disable_api_stop": false,
+            "disable_api_termination": false,
+            "ebs_block_device": [],
+            "ebs_optimized": false,
+            "enclave_options": [
+              {
+                "enabled": false
+              }
+            ],
+            "ephemeral_block_device": [],
+            "get_password_data": false,
+            "hibernation": false,
+            "host_id": "",
+            "host_resource_group_arn": null,
+            "iam_instance_profile": "",
+            "id": "i-05cf77357c710ee05",
+            "instance_initiated_shutdown_behavior": "stop",
+            "instance_lifecycle": "",
+            "instance_market_options": [],
+            "instance_state": "running",
+            "instance_type": "t2.micro",
+            "ipv6_address_count": 0,
+            "ipv6_addresses": [],
+            "key_name": "itashi-key",
+            "launch_template": [],
+            "maintenance_options": [
+              {
+                "auto_recovery": "default"
+              }
+            ],
+            "metadata_options": [
+              {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 1,
+                "http_tokens": "optional",
+                "instance_metadata_tags": "disabled"
+              }
+            ],
+            "monitoring": false,
+            "network_interface": [],
+            "outpost_arn": "",
+            "password_data": "",
+            "placement_group": "",
+            "placement_partition_number": 0,
+            "primary_network_interface_id": "eni-0425c94b7488d8867",
+            "private_dns": "ip-172-31-3-253.us-east-2.compute.internal",
+            "private_dns_name_options": [
+              {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+              }
+            ],
+            "private_ip": "172.31.3.253",
+            "public_dns": "ec2-3-137-187-141.us-east-2.compute.amazonaws.com",
+            "public_ip": "3.137.187.141",
+            "root_block_device": [
+              {
+                "delete_on_termination": true,
+                "device_name": "/dev/sda1",
+                "encrypted": false,
+                "iops": 100,
+                "kms_key_id": "",
+                "tags": {},
+                "tags_all": {},
+                "throughput": 0,
+                "volume_id": "vol-09b31ffeff6562fed",
+                "volume_size": 8,
+                "volume_type": "gp2"
+              }
+            ],
+            "secondary_private_ips": [],
+            "security_groups": [
+              "itashi-key"
+            ],
+            "source_dest_check": true,
+            "spot_instance_request_id": "",
+            "subnet_id": "subnet-021f703c84ac65677",
+            "tags": {
+              "Name": "Itashi"
+            },
+            "tags_all": {
+              "Name": "Itashi"
+            },
+            "tenancy": "default",
+            "timeouts": null,
+            "user_data": null,
+            "user_data_base64": null,
+            "user_data_replace_on_change": false,
+            "volume_tags": null,
+            "vpc_security_group_ids": [
+              "sg-063512929027095be"
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMCwicmVhZCI6OTAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_key_pair.keypair",
+            "aws_security_group.ubuntu",
+            "data.aws_ami.ubuntu",
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_key_pair",
+      "name": "keypair",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:554660509057:key-pair/itashi-key",
+            "fingerprint": "02:f1:5f:4b:f4:90:d7:04:f2:b7:18:42:6e:27:84:66",
+            "id": "itashi-key",
+            "key_name": "itashi-key",
+            "key_name_prefix": "",
+            "key_pair_id": "key-0965bce5fca9f339b",
+            "key_type": "rsa",
+            "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC8/kZ3oqH3ffKbLo2BnoWd9RiXOwaaiMHc2NtbY3KY7NHs+RxcHg409tFWYZ78yvkTRrHi8NiESJqoJyNzNhe7HAJU736ocSG+Da7XSiauH1dV/N7RtXQy9mKManxfqylwr4fKqik+ybidDyHtJ3XAjDBhCVZj3jlryKc4nbKO27pP7JWdbc6GiVFdyFVmGVzvAE3WFQNZfBrEoFKA4UxKpsf85eYNxpnyrOgFx/nSBaefoNn/82zRHphZfn/OOCasPMZjoqWESlzOeY+tOJYXw+vjlfbUN1uHn9EQybQY3ANXIn2XnBWnxAmV9thNYAN+Q28lVUdyMWatWyrDykJ",
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "ubuntu",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-2:554660509057:security-group/sg-063512929027095be",
+            "description": "Managed by terraform",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "All open for outbound access.",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-063512929027095be",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTP Port",
+                "from_port": 80,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 80
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Port 22 for outbound access.",
+                "from_port": 22,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 22
+              }
+            ],
+            "name": "itashi-key",
+            "name_prefix": "",
+            "owner_id": "554660509057",
+            "revoke_rules_on_delete": false,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "vpc_id": "vpc-024fe4924cee0a390"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "local_file",
+      "name": "index_html",
+      "provider": "provider[\"registry.terraform.io/hashicorp/local\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "content": "\u003cbr\u003eThis is apache instance is running on Server with Private IP:: 172.31.3.253\u003c/br\u003e\r\n\u003cbr\u003eFirewall rules are managed using:: itashi-key Security Group.\u003c/br\u003e",
+            "content_base64": null,
+            "content_base64sha256": "FIV8RovvJRnXvXyIVBR1ItpfL+j/n8QrcAfw3ws4B/I=",
+            "content_base64sha512": "iWFSdw0O8inve577s5mQf8HMkZXfoVoU5RE0+if46ADF/yJQAeSmvNPAeBN3oUwSwFcls9k00y35EVz9BPeMzg==",
+            "content_md5": "e826a919bd2faa1df163a0ecfcb448c0",
+            "content_sha1": "603908c7c5e5a953ddaeef22c2f0e5abdc179460",
+            "content_sha256": "14857c468bef2519d7bd7c8854147522da5f2fe8ff9fc42b7007f0df0b3807f2",
+            "content_sha512": "896152770d0ef229ef7b9efbb399907fc1cc9195dfa15a14e51134fa27f8e800c5ff225001e4a6bcd3c0781377a14c12c05725b3d934d32df9115cfd04f78cce",
+            "directory_permission": "0777",
+            "file_permission": "0777",
+            "filename": "index.html",
+            "id": "603908c7c5e5a953ddaeef22c2f0e5abdc179460",
+            "sensitive_content": null,
+            "source": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_instance.ubuntu",
+            "aws_key_pair.keypair",
+            "aws_security_group.ubuntu",
+            "data.aws_ami.ubuntu",
+            "template_file.index_html",
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "local_file",
+      "name": "tls_private_key",
+      "provider": "provider[\"registry.terraform.io/hashicorp/local\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "content": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAwvP5Gd6Kh933ymy6NgZ6FnfUYlzsGmojB3NjbW2NymOzR7Pk\ncXB4ONPbRVmGe/Mr5E0ax4vDYhEiaqCcjczYXuxwCVO9+qHEhvg2u10omrh9XVfz\ne0bV0MvZijGp8X6spcK+HyqopPsm4nQ8h7Sd1wIwwYQlWY945a8inOJ2yjtu6T+y\nVnW3OholRXchVZhlc7wBN1hUDWXwaxKBSgOFMSqbH/OXmDcaZ8qzoBcf50gWnn6D\nZ//Ns0R6YWX5/zjgmrDzGY6KlhEpcznmPrTiWF8Pr45X21Ddbh5/REMm0GNwDVyJ\n9l5wVp8QJlfbYTWADfkNvJVVHcjFmrVsqw8pCQIDAQABAoIBAGdyvsQTar8d8dbg\nSw9P8IjrnS90z3RUzbGucRwn/g1fSkrKEnZ/j8vX34q1Lr+nEatbntI0P8FSBkk+\nYNR91nLIU8sfPLg6Dubv31sc2+b97sgRW4oW1G6vPQgvwlX7OfHbnLc9E7A39TJF\nK7l3BiqJZwXI8WjM0QJQJLXLFe3JHTKrJtVla2fpW1PtwdHrfNxHmSw16JhZZeDf\nRSlqsHta77B2kyF88jGxXBr2wqYVVV4R5a/zukIW2uKsJnSndPqJH33g0pzYd/lQ\n22qnR/+7cuJTDjLkFKYe5eIKLvPShkGmDMuim/KzlKVTmgJF7Fk3DJ24Gxy1Cpoi\nmakEuAECgYEAxzIOGaPBPk8C6smh/nXgUdVLMo3pQUwmou8EX4N70IKFkRejSQv2\nZ5zQVRvgxYU/n03XSvcVwB7OfEzKLFWiIE95sxFxRfjG0rUU0eDdqyahk+i3gk/O\ncOebWn4OKRcwkTzKPoL1GwI25BQQu6AwFFFDsVgJSp2BhWmRiZHk3OkCgYEA+owz\nWibOnTcGesEFj7UK8g16A1dnvEGsniYYVadRoTQgN5bX2Q855hjdaTPsKvCb2GbN\nPIzCZytkDY7Bi1hVmwBC5UmobJ5i+pCdp2RblV5atCbn6KQM4WiCs7I+DZRwkrJU\nHflzwpe5F+yG2WUInHJNyYq7j2IQ5jZX3C5v1yECgYB2oRLQpjuR1hBQr6BwINdl\nJPfRtb4yix1/b4VVNMLqHLFbBY7TE/K9JiDUbvPf7klDoGIVXS1w62fhkwHcgWs6\nftplkH+7Qjt2hS1PCPI62Zjks3WGf+zcRLK6o9PfGNZtyJxRukAqw5jZIDIO64l2\nsCb2WQ2/iCn4wDRSj7aS8QKBgF+h2gwEGgMqOJ/sQyoqKWZgvHzABQl3a+LlmY5A\nEklcsxtkyTjBthDc1s5MEk4FjwbXnmkJNT7Z8hO2tKtyaSKDxATuy4nCHveS8You\nJULrQ+XVn9lNnNkA4jqiw0q9qQZlaPQT/hp9fRnjn0klZlcIziYqfRLqlJa6kWiq\nlOfhAoGAcOAO3Z7JruyvccYlxPGiRAVvmjW/0zK1ZEOBhnpnNRNDKAsEJcHKXO9h\nuE4p0A1jTQtW0RWKQgHKMfcg3PAltBT/sUOEtkVoc8YKUG2FMAqp3jc3T91HhTAD\nL6UUeWp/pDzpQ7IhNBl4yI8X7Nghwva/UfngVj8HQdxM8amc93E=\n-----END RSA PRIVATE KEY-----\n",
+            "content_base64": null,
+            "content_base64sha256": "/6k8Pj0aSqNh4mXo+p16bh/5tcdsKrmS0/wBHiLPw0c=",
+            "content_base64sha512": "KhSpaGu2+8A5u9QE9Daoo7avekQr2UsdlqBnrl1RMipuWC4B8cYyHkbjw49RWK1tZ2byBvyn9p8VtBI/9PgPpQ==",
+            "content_md5": "b0ec38139f43c4cbeba6021630adcd65",
+            "content_sha1": "b966a6673c53e9a6f970c9551b17c03d0787206e",
+            "content_sha256": "ffa93c3e3d1a4aa361e265e8fa9d7a6e1ff9b5c76c2ab992d3fc011e22cfc347",
+            "content_sha512": "2a14a9686bb6fbc039bbd404f436a8a3b6af7a442bd94b1d96a067ae5d51322a6e582e01f1c6321e46e3c38f5158ad6d6766f206fca7f69f15b4123ff4f80fa5",
+            "directory_permission": "0777",
+            "file_permission": "0600",
+            "filename": "c:/users/Admin/.ssh/itashi-key.pem",
+            "id": "b966a6673c53e9a6f970c9551b17c03d0787206e",
+            "sensitive_content": null,
+            "source": null
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "content"
+              }
+            ]
+          ],
+          "dependencies": [
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "copy_index_html",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "1134405892482503569",
+            "triggers": {
+              "index_html": "603908c7c5e5a953ddaeef22c2f0e5abdc179460"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_instance.ubuntu",
+            "aws_key_pair.keypair",
+            "aws_security_group.ubuntu",
+            "data.aws_ami.ubuntu",
+            "local_file.index_html",
+            "template_file.index_html",
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "install_packages",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "9147020159905229556",
+            "triggers": {
+              "copy_index_html": "1134405892482503569"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_instance.ubuntu",
+            "aws_key_pair.keypair",
+            "aws_security_group.ubuntu",
+            "data.aws_ami.ubuntu",
+            "local_file.index_html",
+            "null_resource.copy_index_html",
+            "template_file.index_html",
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "template_file",
+      "name": "index_html",
+      "provider": "provider[\"registry.terraform.io/hashicorp/template\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "filename": null,
+            "id": "14857c468bef2519d7bd7c8854147522da5f2fe8ff9fc42b7007f0df0b3807f2",
+            "rendered": "\u003cbr\u003eThis is apache instance is running on Server with Private IP:: 172.31.3.253\u003c/br\u003e\r\n\u003cbr\u003eFirewall rules are managed using:: itashi-key Security Group.\u003c/br\u003e",
+            "template": "\u003cbr\u003eThis is apache instance is running on Server with Private IP:: ${PRIVATE_IP}\u003c/br\u003e\r\n\u003cbr\u003eFirewall rules are managed using:: ${SECURITY_GROUP} Security Group.\u003c/br\u003e",
+            "vars": {
+              "PRIVATE_IP": "172.31.3.253",
+              "SECURITY_GROUP": "itashi-key"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_instance.ubuntu",
+            "aws_key_pair.keypair",
+            "aws_security_group.ubuntu",
+            "data.aws_ami.ubuntu",
+            "tls_private_key.keypair"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "tls_private_key",
+      "name": "keypair",
+      "provider": "provider[\"registry.terraform.io/hashicorp/tls\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "algorithm": "RSA",
+            "ecdsa_curve": "P224",
+            "id": "d9fbf98c9c6b379e9137eb0350e8884c25e37b9f",
+            "private_key_openssh": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdz\nc2gtcnNhAAAAAwEAAQAAAQEAwvP5Gd6Kh933ymy6NgZ6FnfUYlzsGmojB3NjbW2N\nymOzR7PkcXB4ONPbRVmGe/Mr5E0ax4vDYhEiaqCcjczYXuxwCVO9+qHEhvg2u10o\nmrh9XVfze0bV0MvZijGp8X6spcK+HyqopPsm4nQ8h7Sd1wIwwYQlWY945a8inOJ2\nyjtu6T+yVnW3OholRXchVZhlc7wBN1hUDWXwaxKBSgOFMSqbH/OXmDcaZ8qzoBcf\n50gWnn6DZ//Ns0R6YWX5/zjgmrDzGY6KlhEpcznmPrTiWF8Pr45X21Ddbh5/REMm\n0GNwDVyJ9l5wVp8QJlfbYTWADfkNvJVVHcjFmrVsqw8pCQAAA7jwxUgK8MVICgAA\nAAdzc2gtcnNhAAABAQDC8/kZ3oqH3ffKbLo2BnoWd9RiXOwaaiMHc2NtbY3KY7NH\ns+RxcHg409tFWYZ78yvkTRrHi8NiESJqoJyNzNhe7HAJU736ocSG+Da7XSiauH1d\nV/N7RtXQy9mKManxfqylwr4fKqik+ybidDyHtJ3XAjDBhCVZj3jlryKc4nbKO27p\nP7JWdbc6GiVFdyFVmGVzvAE3WFQNZfBrEoFKA4UxKpsf85eYNxpnyrOgFx/nSBae\nfoNn/82zRHphZfn/OOCasPMZjoqWESlzOeY+tOJYXw+vjlfbUN1uHn9EQybQY3AN\nXIn2XnBWnxAmV9thNYAN+Q28lVUdyMWatWyrDykJAAAAAwEAAQAAAQBncr7EE2q/\nHfHW4EsPT/CI650vdM90VM2xrnEcJ/4NX0pKyhJ2f4/L19+KtS6/pxGrW57SND/B\nUgZJPmDUfdZyyFPLHzy4Og7m799bHNvm/e7IEVuKFtRurz0IL8JV+znx25y3PROw\nN/UyRSu5dwYqiWcFyPFozNECUCS1yxXtyR0yqybVZWtn6VtT7cHR63zcR5ksNeiY\nWWXg30UparB7Wu+wdpMhfPIxsVwa9sKmFVVeEeWv87pCFtrirCZ0p3T6iR994NKc\n2Hf5UNtqp0f/u3LiUw4y5BSmHuXiCi7z0oZBpgzLopvys5SlU5oCRexZNwyduBsc\ntQqaIpmpBLgBAAAAgHDgDt2eya7sr3HGJcTxokQFb5o1v9MytWRDgYZ6ZzUTQygL\nBCXBylzvYbhOKdANY00LVtEVikIByjH3INzwJbQU/7FDhLZFaHPGClBthTAKqd43\nN0/dR4UwAy+lFHlqf6Q86UOyITQZeMiPF+zYIcL2v1H54FY/B0HcTPGpnPdxAAAA\ngQDHMg4Zo8E+TwLqyaH+deBR1UsyjelBTCai7wRfg3vQgoWRF6NJC/ZnnNBVG+DF\nhT+fTddK9xXAHs58TMosVaIgT3mzEXFF+MbStRTR4N2rJqGT6LeCT85w55tafg4p\nFzCRPMo+gvUbAjbkFBC7oDAUUUOxWAlKnYGFaZGJkeTc6QAAAIEA+owzWibOnTcG\nesEFj7UK8g16A1dnvEGsniYYVadRoTQgN5bX2Q855hjdaTPsKvCb2GbNPIzCZytk\nDY7Bi1hVmwBC5UmobJ5i+pCdp2RblV5atCbn6KQM4WiCs7I+DZRwkrJUHflzwpe5\nF+yG2WUInHJNyYq7j2IQ5jZX3C5v1yEAAAAAAQID\n-----END OPENSSH PRIVATE KEY-----\n",
+            "private_key_pem": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAwvP5Gd6Kh933ymy6NgZ6FnfUYlzsGmojB3NjbW2NymOzR7Pk\ncXB4ONPbRVmGe/Mr5E0ax4vDYhEiaqCcjczYXuxwCVO9+qHEhvg2u10omrh9XVfz\ne0bV0MvZijGp8X6spcK+HyqopPsm4nQ8h7Sd1wIwwYQlWY945a8inOJ2yjtu6T+y\nVnW3OholRXchVZhlc7wBN1hUDWXwaxKBSgOFMSqbH/OXmDcaZ8qzoBcf50gWnn6D\nZ//Ns0R6YWX5/zjgmrDzGY6KlhEpcznmPrTiWF8Pr45X21Ddbh5/REMm0GNwDVyJ\n9l5wVp8QJlfbYTWADfkNvJVVHcjFmrVsqw8pCQIDAQABAoIBAGdyvsQTar8d8dbg\nSw9P8IjrnS90z3RUzbGucRwn/g1fSkrKEnZ/j8vX34q1Lr+nEatbntI0P8FSBkk+\nYNR91nLIU8sfPLg6Dubv31sc2+b97sgRW4oW1G6vPQgvwlX7OfHbnLc9E7A39TJF\nK7l3BiqJZwXI8WjM0QJQJLXLFe3JHTKrJtVla2fpW1PtwdHrfNxHmSw16JhZZeDf\nRSlqsHta77B2kyF88jGxXBr2wqYVVV4R5a/zukIW2uKsJnSndPqJH33g0pzYd/lQ\n22qnR/+7cuJTDjLkFKYe5eIKLvPShkGmDMuim/KzlKVTmgJF7Fk3DJ24Gxy1Cpoi\nmakEuAECgYEAxzIOGaPBPk8C6smh/nXgUdVLMo3pQUwmou8EX4N70IKFkRejSQv2\nZ5zQVRvgxYU/n03XSvcVwB7OfEzKLFWiIE95sxFxRfjG0rUU0eDdqyahk+i3gk/O\ncOebWn4OKRcwkTzKPoL1GwI25BQQu6AwFFFDsVgJSp2BhWmRiZHk3OkCgYEA+owz\nWibOnTcGesEFj7UK8g16A1dnvEGsniYYVadRoTQgN5bX2Q855hjdaTPsKvCb2GbN\nPIzCZytkDY7Bi1hVmwBC5UmobJ5i+pCdp2RblV5atCbn6KQM4WiCs7I+DZRwkrJU\nHflzwpe5F+yG2WUInHJNyYq7j2IQ5jZX3C5v1yECgYB2oRLQpjuR1hBQr6BwINdl\nJPfRtb4yix1/b4VVNMLqHLFbBY7TE/K9JiDUbvPf7klDoGIVXS1w62fhkwHcgWs6\nftplkH+7Qjt2hS1PCPI62Zjks3WGf+zcRLK6o9PfGNZtyJxRukAqw5jZIDIO64l2\nsCb2WQ2/iCn4wDRSj7aS8QKBgF+h2gwEGgMqOJ/sQyoqKWZgvHzABQl3a+LlmY5A\nEklcsxtkyTjBthDc1s5MEk4FjwbXnmkJNT7Z8hO2tKtyaSKDxATuy4nCHveS8You\nJULrQ+XVn9lNnNkA4jqiw0q9qQZlaPQT/hp9fRnjn0klZlcIziYqfRLqlJa6kWiq\nlOfhAoGAcOAO3Z7JruyvccYlxPGiRAVvmjW/0zK1ZEOBhnpnNRNDKAsEJcHKXO9h\nuE4p0A1jTQtW0RWKQgHKMfcg3PAltBT/sUOEtkVoc8YKUG2FMAqp3jc3T91HhTAD\nL6UUeWp/pDzpQ7IhNBl4yI8X7Nghwva/UfngVj8HQdxM8amc93E=\n-----END RSA PRIVATE KEY-----\n",
+            "private_key_pem_pkcs8": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDC8/kZ3oqH3ffK\nbLo2BnoWd9RiXOwaaiMHc2NtbY3KY7NHs+RxcHg409tFWYZ78yvkTRrHi8NiESJq\noJyNzNhe7HAJU736ocSG+Da7XSiauH1dV/N7RtXQy9mKManxfqylwr4fKqik+ybi\ndDyHtJ3XAjDBhCVZj3jlryKc4nbKO27pP7JWdbc6GiVFdyFVmGVzvAE3WFQNZfBr\nEoFKA4UxKpsf85eYNxpnyrOgFx/nSBaefoNn/82zRHphZfn/OOCasPMZjoqWESlz\nOeY+tOJYXw+vjlfbUN1uHn9EQybQY3ANXIn2XnBWnxAmV9thNYAN+Q28lVUdyMWa\ntWyrDykJAgMBAAECggEAZ3K+xBNqvx3x1uBLD0/wiOudL3TPdFTNsa5xHCf+DV9K\nSsoSdn+Py9ffirUuv6cRq1ue0jQ/wVIGST5g1H3WcshTyx88uDoO5u/fWxzb5v3u\nyBFbihbUbq89CC/CVfs58ductz0TsDf1MkUruXcGKolnBcjxaMzRAlAktcsV7ckd\nMqsm1WVrZ+lbU+3B0et83EeZLDXomFll4N9FKWqwe1rvsHaTIXzyMbFcGvbCphVV\nXhHlr/O6Qhba4qwmdKd0+okffeDSnNh3+VDbaqdH/7ty4lMOMuQUph7l4gou89KG\nQaYMy6Kb8rOUpVOaAkXsWTcMnbgbHLUKmiKZqQS4AQKBgQDHMg4Zo8E+TwLqyaH+\ndeBR1UsyjelBTCai7wRfg3vQgoWRF6NJC/ZnnNBVG+DFhT+fTddK9xXAHs58TMos\nVaIgT3mzEXFF+MbStRTR4N2rJqGT6LeCT85w55tafg4pFzCRPMo+gvUbAjbkFBC7\noDAUUUOxWAlKnYGFaZGJkeTc6QKBgQD6jDNaJs6dNwZ6wQWPtQryDXoDV2e8Qaye\nJhhVp1GhNCA3ltfZDznmGN1pM+wq8JvYZs08jMJnK2QNjsGLWFWbAELlSahsnmL6\nkJ2nZFuVXlq0JufopAzhaIKzsj4NlHCSslQd+XPCl7kX7IbZZQicck3JiruPYhDm\nNlfcLm/XIQKBgHahEtCmO5HWEFCvoHAg12Uk99G1vjKLHX9vhVU0wuocsVsFjtMT\n8r0mINRu89/uSUOgYhVdLXDrZ+GTAdyBazp+2mWQf7tCO3aFLU8I8jrZmOSzdYZ/\n7NxEsrqj098Y1m3InFG6QCrDmNkgMg7riXawJvZZDb+IKfjANFKPtpLxAoGAX6Ha\nDAQaAyo4n+xDKiopZmC8fMAFCXdr4uWZjkASSVyzG2TJOMG2ENzWzkwSTgWPBtee\naQk1PtnyE7a0q3JpIoPEBO7LicIe95Lxii4lQutD5dWf2U2c2QDiOqLDSr2pBmVo\n9BP+Gn19GeOfSSVmVwjOJip9EuqUlrqRaKqU5+ECgYBw4A7dnsmu7K9xxiXE8aJE\nBW+aNb/TMrVkQ4GGemc1E0MoCwQlwcpc72G4TinQDWNNC1bRFYpCAcox9yDc8CW0\nFP+xQ4S2RWhzxgpQbYUwCqneNzdP3UeFMAMvpRR5an+kPOlDsiE0GXjIjxfs2CHC\n9r9R+eBWPwdB3EzxqZz3cQ==\n-----END PRIVATE KEY-----\n",
+            "public_key_fingerprint_md5": "9e:fd:97:07:ca:4c:f1:ad:05:98:f8:8f:1b:a6:19:7f",
+            "public_key_fingerprint_sha256": "SHA256:IyHnOqYpu+tDIuR5D2iOmDmo2ISgzfAPDiIpCIe765s",
+            "public_key_openssh": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC8/kZ3oqH3ffKbLo2BnoWd9RiXOwaaiMHc2NtbY3KY7NHs+RxcHg409tFWYZ78yvkTRrHi8NiESJqoJyNzNhe7HAJU736ocSG+Da7XSiauH1dV/N7RtXQy9mKManxfqylwr4fKqik+ybidDyHtJ3XAjDBhCVZj3jlryKc4nbKO27pP7JWdbc6GiVFdyFVmGVzvAE3WFQNZfBrEoFKA4UxKpsf85eYNxpnyrOgFx/nSBaefoNn/82zRHphZfn/OOCasPMZjoqWESlzOeY+tOJYXw+vjlfbUN1uHn9EQybQY3ANXIn2XnBWnxAmV9thNYAN+Q28lVUdyMWatWyrDykJ\n",
+            "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwvP5Gd6Kh933ymy6NgZ6\nFnfUYlzsGmojB3NjbW2NymOzR7PkcXB4ONPbRVmGe/Mr5E0ax4vDYhEiaqCcjczY\nXuxwCVO9+qHEhvg2u10omrh9XVfze0bV0MvZijGp8X6spcK+HyqopPsm4nQ8h7Sd\n1wIwwYQlWY945a8inOJ2yjtu6T+yVnW3OholRXchVZhlc7wBN1hUDWXwaxKBSgOF\nMSqbH/OXmDcaZ8qzoBcf50gWnn6DZ//Ns0R6YWX5/zjgmrDzGY6KlhEpcznmPrTi\nWF8Pr45X21Ddbh5/REMm0GNwDVyJ9l5wVp8QJlfbYTWADfkNvJVVHcjFmrVsqw8p\nCQIDAQAB\n-----END PUBLIC KEY-----\n",
+            "rsa_bits": 2048
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
